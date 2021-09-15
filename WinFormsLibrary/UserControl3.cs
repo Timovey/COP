@@ -16,6 +16,7 @@ namespace WinFormsLibrary
         private bool isField = false;
         private string template = "";
 
+
         public void AddTemplate(string templateFromOutside, char begin, char end)
         {
             string[] splitedStrings = templateFromOutside.Split(begin, end);
