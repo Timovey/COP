@@ -10,6 +10,8 @@ namespace COP
 	{
 		public int Id { get; set; }
 		public string Name { get; set; }
-		public int e = 6;
+		public string Surname { get; set; }
+		public decimal Price { get; set; }
+		public double Old = 7.6;
 	}
 }

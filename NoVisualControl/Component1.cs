@@ -126,6 +126,40 @@ WordTextProperties {Bold = true, Size = "28", } ) },
             }
             return null;
         }
-      
+        /// <summary>
+        /// Задание форматирования для абзаца
+        /// </summary>
+        /// <param name="paragraphProperties"></param>
+        /// <returns></returns>
+        private static ParagraphProperties CreateParagraphProperties(WordTextProperties
+       paragraphProperties)
+        {
+            if (paragraphProperties != null)
+            {
+                ParagraphProperties properties = new ParagraphProperties();
+                properties.AppendChild(new Justification()
+                {
+                    Val = paragraphProperties.JustificationValues
+                });
+                properties.AppendChild(new SpacingBetweenLines
+                {
+                    LineRule = LineSpacingRuleValues.Auto
+                });
+                properties.AppendChild(new Indentation());
+                ParagraphMarkRunProperties paragraphMarkRunProperties = new
+               ParagraphMarkRunProperties();
+                if (!string.IsNullOrEmpty(paragraphProperties.Size))
+                {
+                    paragraphMarkRunProperties.AppendChild(new FontSize
+                    {
+                        Val =
+                   paragraphProperties.Size
+                    });
+                }
+                properties.AppendChild(paragraphMarkRunProperties);
+                return properties;
+            }
+            return null;
+        }
     }
 }

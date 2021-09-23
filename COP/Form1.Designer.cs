@@ -53,6 +53,7 @@ namespace COP
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.buttonWord2 = new System.Windows.Forms.Button();
+            this.component21 = new NoVisualControl.Component2(this.components);
             this.SuspendLayout();
             // 
             // buttonColor
@@ -310,6 +311,7 @@ namespace COP
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxTitle;
         private System.Windows.Forms.Button buttonWord2;
+        private NoVisualControl.Component2 component21;
     }
 }
 

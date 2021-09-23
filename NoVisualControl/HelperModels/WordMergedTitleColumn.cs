@@ -8,7 +8,7 @@ namespace NoVisualControl.HelperModels
 {
     public class WordMergedTitleColumn
     {
-        public decimal[] Columns { get; set; }
+        public int[] Columns { get; set; }
         public string Title { get; set; }
     }
 }

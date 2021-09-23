@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using NoVisualControl.HelperModels;
 namespace COP
 {
     public partial class Form1 : Form
@@ -137,12 +137,30 @@ namespace COP
 				{
 					try
 					{
-						List<string> list = new List<string>();
-						list.Add("csdcdscsd");
-						list.Add("111");
-						list.Add("23424234csddcsdcs");
-						list.Add("xfcsdcscds");
-						component11.Report(fileName: dialog.FileName, title: textBoxTitle.Text, list);
+						
+						List<WordTitleColumn> titleColumn = new List<WordTitleColumn>();
+						List<WordMergedTitleColumn> mergedTitleColumns = new List<WordMergedTitleColumn>();
+						List<Object> objects = new List<Object>();
+
+						ClassFill c = new ClassFill { Id = 5, Name = "csdcdsc", Price = 200 };
+						objects.Add(c);
+						objects.Add(new ClassFill { Id = 2, Name = "aaaaaaaaa", Price = 300 });
+						objects.Add(new ClassFill { Id = 6, Name = "qslplcdsocdi", Price = 400 });
+						objects.Add(new ClassFill { Id = 9, Name = ";alkcmjkcd[qo", Price = 800 });
+
+						Type type = c.GetType();
+
+						titleColumn.Add(new WordTitleColumn { Name = "Qe", Width = 20, PropertyInfo = type.GetProperty("Id") });
+						titleColumn.Add(new WordTitleColumn { Name = "N", Width = 26, PropertyInfo = type.GetProperty("Name") });
+						titleColumn.Add(new WordTitleColumn { Name = "Price", Width = 40, PropertyInfo = type.GetProperty("Price") });
+						titleColumn.Add(new WordTitleColumn { Name = "Old", Width = 22, FieldInfo = type.GetField("Old") });
+
+						mergedTitleColumns.Add(new WordMergedTitleColumn
+						{
+							Columns = new int[] { 0, 1 },
+							Title = "Common"
+						});
+						component21.Report(fileName: dialog.FileName, title: textBoxTitle.Text, titleColumn, mergedTitleColumns, objects);
 						MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK,
 						MessageBoxIcon.Information);
 					}
