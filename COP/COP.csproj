@@ -85,6 +85,10 @@
       <Project>{1f7abd7c-b617-4f00-a572-7b50bd93dfb1}</Project>
       <Name>ControlLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NoVisualControl\NoVisualControl.csproj">
+      <Project>{67cf1552-d19a-42ee-aadc-2165e7a04d17}</Project>
+      <Name>NoVisualControl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

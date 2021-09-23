@@ -90,5 +90,69 @@ namespace COP
 				userControl31.AddTemplate(textBoxTemp.Text, '{', '}');
 			}
 		}
-	}
+
+        private void buttonWord_Click(object sender, EventArgs e)
+        {
+			if(String.IsNullOrEmpty(textBoxTitle.Text))
+            {
+				MessageBox.Show("Заполните заголовок", "Ошибка", MessageBoxButtons.OK,
+						  MessageBoxIcon.Error);
+
+			}
+			using (var dialog = new SaveFileDialog { Filter = "docx|*.docx" })
+			{
+				if (dialog.ShowDialog() == DialogResult.OK)
+				{
+					try
+					{
+						List<string> list = new List<string>();
+						list.Add("csdcdscsd");
+						list.Add("111");
+						list.Add("23424234csddcsdcs");
+						component11.Report(fileName: dialog.FileName, title: textBoxTitle.Text, list);
+						MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK,
+						MessageBoxIcon.Information);
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+					   MessageBoxIcon.Error);
+					}
+				}
+			}
+			
+		}
+
+        private void buttonWord2_Click(object sender, EventArgs e)
+        {
+			if (String.IsNullOrEmpty(textBoxTitle.Text))
+			{
+				MessageBox.Show("Заполните заголовок", "Ошибка", MessageBoxButtons.OK,
+						  MessageBoxIcon.Error);
+
+			}
+			using (var dialog = new SaveFileDialog { Filter = "docx|*.docx" })
+			{
+				if (dialog.ShowDialog() == DialogResult.OK)
+				{
+					try
+					{
+						List<string> list = new List<string>();
+						list.Add("csdcdscsd");
+						list.Add("111");
+						list.Add("23424234csddcsdcs");
+						list.Add("xfcsdcscds");
+						component11.Report(fileName: dialog.FileName, title: textBoxTitle.Text, list);
+						MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK,
+						MessageBoxIcon.Information);
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+					   MessageBoxIcon.Error);
+					}
+				}
+			}
+		}
+    }
 }

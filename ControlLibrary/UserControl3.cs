@@ -58,6 +58,7 @@ namespace ControlLibrary
 			}
             return null;
 		}
+        // добавление элементов в список
         public void AddToList<T>(List<T> obj)
         {
             if (!isField && !Field1.Equals("") && !Field2.Equals(""))
