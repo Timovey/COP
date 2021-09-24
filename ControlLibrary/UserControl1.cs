@@ -30,10 +30,14 @@ namespace ControlLibrary
             }
             set
             {
-                if(value != null) { 
-                    ComboBox.Items.Add(value);
-                    ComboBox.SelectedItem = value;
+                if (value != null)
+                {
+                    if (ComboBox.Items.Contains(value))
+                    {
+                        ComboBox.SelectedItem = value;
+                    }
                 }
+
             }
         }
         // метод заполнения списка строковыми значениями

@@ -54,6 +54,7 @@ namespace COP
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.buttonWord2 = new System.Windows.Forms.Button();
             this.component21 = new NoVisualControl.Component2(this.components);
+            this.buttonTakeList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonColor
@@ -252,11 +253,22 @@ namespace COP
             this.buttonWord2.UseVisualStyleBackColor = true;
             this.buttonWord2.Click += new System.EventHandler(this.buttonWord2_Click);
             // 
+            // buttonTakeList
+            // 
+            this.buttonTakeList.Location = new System.Drawing.Point(840, 344);
+            this.buttonTakeList.Name = "buttonTakeList";
+            this.buttonTakeList.Size = new System.Drawing.Size(165, 36);
+            this.buttonTakeList.TabIndex = 23;
+            this.buttonTakeList.Text = "Получить";
+            this.buttonTakeList.UseVisualStyleBackColor = true;
+            this.buttonTakeList.Click += new System.EventHandler(this.ButtonTakeList_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 640);
+            this.Controls.Add(this.buttonTakeList);
             this.Controls.Add(this.buttonWord2);
             this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.label3);
@@ -312,6 +324,7 @@ namespace COP
         private System.Windows.Forms.TextBox textBoxTitle;
         private System.Windows.Forms.Button buttonWord2;
         private NoVisualControl.Component2 component21;
+        private System.Windows.Forms.Button buttonTakeList;
     }
 }
 

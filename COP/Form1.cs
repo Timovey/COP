@@ -172,5 +172,10 @@ namespace COP
 				}
 			}
 		}
+
+        private void ButtonTakeList_Click(object sender, EventArgs e)
+        {
+            userControl31.GetItem<ClassFill>();
+        }
     }
 }

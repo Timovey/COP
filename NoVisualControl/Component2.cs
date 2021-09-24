@@ -63,7 +63,6 @@ WordTextProperties {Bold = true, Size = "28", } ) },
                     }
                 }));
                 
-                var j = 0;
                 Table table = new Table();
                 TableProperties props = new TableProperties(
                 new TableBorders(
@@ -100,7 +99,72 @@ WordTextProperties {Bold = true, Size = "28", } ) },
 
                 table.AppendChild<TableProperties>(props);
                 TableRow tr = new TableRow();
-                TableCell tc = new TableCell();
+
+                List<TableCell> firstRowCells = new List<TableCell>();
+                List<TableCell> secondRowCells = new List<TableCell>();
+                bool[] mergedCells = new bool[titleColumns.Count];
+                for(int i = 0; i < mergedCells.Length; i++)
+                {
+                    mergedCells[i] = false;
+                }
+                foreach(var col in mergedTitleColumns)
+                {
+                    foreach(int index in col.Columns)
+                    {
+                        mergedCells[index] = true;
+                    }
+                }
+                int p = 0;
+                foreach (var col in titleColumns)
+                {
+                    TableCell tCellFirst = new TableCell();
+                    firstRowCells.Add(tCellFirst);
+                    TableCell tCellSecond = new TableCell();
+                    secondRowCells.Add(tCellSecond);
+                    tCellFirst.TableCellProperties = new TableCellProperties();
+                    tCellSecond.TableCellProperties = new TableCellProperties();
+                    if(!mergedCells[p]) {
+                        tCellFirst.TableCellProperties.VerticalMerge = new VerticalMerge { Val = MergedCellValues.Restart };
+                        tCellSecond.TableCellProperties.VerticalMerge = new VerticalMerge { Val = MergedCellValues.Continue };
+                    }
+                    else
+                    {
+                        tCellFirst.TableCellProperties.VerticalMerge = new VerticalMerge { Val = MergedCellValues.Restart };
+                        tCellSecond.TableCellProperties.VerticalMerge = new VerticalMerge { Val = MergedCellValues.Restart };
+                    }
+                    if (col.Equals(titleColumns.First())) {
+                        tCellFirst.TableCellProperties.HorizontalMerge = new HorizontalMerge { Val = MergedCellValues.Restart };
+                        
+                        p++;
+                        continue;
+                    } 
+                    if (mergedCells[p])
+                    {                       
+                        tCellFirst.TableCellProperties.HorizontalMerge = new HorizontalMerge { Val = MergedCellValues.Continue };
+                    }
+                    else
+                    {
+                        tCellFirst.TableCellProperties.HorizontalMerge = new HorizontalMerge { Val = MergedCellValues.Restart };
+                       
+                    }
+                    p++;
+                }
+                for(int i = 0; i < firstRowCells.Count;i++)
+                {
+                    TableCell tc = firstRowCells[i];
+                    tc.Append(new Paragraph(new Run(new Text("1"))));
+                        tr.Append(tc);
+                }
+                table.Append(tr);
+                tr = new TableRow();
+                for (int i = 0; i < secondRowCells.Count; i++)
+                {
+                    TableCell tc = secondRowCells[i];
+                    tc.Append(new Paragraph(new Run(new Text(titleColumns[i].Name))));
+                    tr.Append(tc);            
+                }
+                table.Append(tr);
+
                 //tc.Append(new Paragraph(new Run(new Text("Дата"))));
                 //tr.Append(tc);
                 //tc = new TableCell();
@@ -111,7 +175,7 @@ WordTextProperties {Bold = true, Size = "28", } ) },
                 //tc.Append(new Paragraph(new Run(new Text("Стоимость (руб)"))));
                 //tr.Append(tc);
                 //table.Append(tr);
-                
+
                 //foreach(var col in )
 
                 //foreach (var procedure in list)
@@ -248,7 +312,7 @@ WordTextProperties {Bold = true, Size = "28", } ) },
                     {
                         return false;
                     }
-                    if(mc != merged.Last() + 1)
+                    if(merged.Count != 0 && mc != merged.Last() + 1)
                     {
                         return false;
                     }
@@ -289,7 +353,23 @@ WordTextProperties {Bold = true, Size = "28", } ) },
 
             return true;
         }
-        private decimal GetWidthColumns(WordMergedTitleColumn col, List<WordTitleColumn> titleColumns)
+        private static int GetCountMergedColumns(int index, bool[] columns)
+        {
+            int h = 0;
+            for(int i = index; i < columns.Length; i++)
+            {
+                if(columns[i])
+                {
+                    h++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return h;
+        }
+        private static decimal GetWidthColumns(WordMergedTitleColumn col, List<WordTitleColumn> titleColumns)
         {
             decimal totalWidth = 0;
             foreach(int c in col.Columns)

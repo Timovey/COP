@@ -15,10 +15,13 @@ namespace ControlLibrary
         private string Field2 = "";
         private bool isField = false;
         private string template = "";
-
+        private char begin = ' ';
+        private char end = ' ';
         // добавление шабьлона
         public void AddTemplate(string templateFromOutside, char begin, char end)
         {
+            this.begin = begin;
+            this.end = end;
             string[] splitedStrings = templateFromOutside.Split(begin, end);
             if (splitedStrings.Length < 3)
             {
@@ -50,17 +53,65 @@ namespace ControlLibrary
 			}
 		}
         // получение элемента
-        public object GetItem ()
+        public T GetItem<T>  () where T : new()
 		{
             if(ListBox.SelectedIndex != -1)
 			{
-                return ListBox.SelectedItem;
-			}
-            return null;
+                string item =  ListBox.SelectedItem.ToString();
+                T t = new T();
+
+
+                string[] splitedStrings = item.Split(begin, end);
+                if (splitedStrings.Length < 3)
+                {
+                    return new T();
+                }
+                Object field1 = splitedStrings[1];
+                Object field2 = splitedStrings[3];
+                Type type = t.GetType();
+                PropertyInfo[] props = type.GetProperties();
+                FieldInfo[] fields = type.GetFields();
+
+                foreach (var p in props)
+                {
+
+                    if (p.Name.Equals(Field1))
+                    {
+                       Type propsType = type.GetProperty(Field1).PropertyType;
+                        var replaceField1 = Convert.ChangeType(field1, propsType);
+                        type.GetProperty(Field1).SetValue(t, replaceField1);
+                    }
+                    if (p.Name.Equals(Field2))
+                    {
+                        Type propsType = type.GetProperty(Field2).PropertyType;
+                        var replaceField2 = Convert.ChangeType(field2, propsType);
+                        type.GetProperty(Field2).SetValue(t, replaceField2);
+                    }
+                }
+
+                foreach (var f in fields)
+                {
+                    if (f.Name.Equals(Field1))
+                    {
+                        Type propsType = type.GetField(Field1).FieldType;
+                        var replaceField1 = Convert.ChangeType(field1, propsType);
+                        type.GetField(Field1).SetValue(t, replaceField1);
+                    }
+                    if (f.Name.Equals(Field2))
+                    {
+                        Type propsType = type.GetField(Field2).FieldType;
+                        var replaceField2 = Convert.ChangeType(field2, propsType);
+                        type.GetField(Field2).SetValue(t, replaceField2);
+                    }
+                }
+                return t;
+            }
+            return new T();
 		}
         // добавление элементов в список
         public void AddToList<T>(List<T> obj)
         {
+            
             if (!isField && !Field1.Equals("") && !Field2.Equals(""))
             {
                 throw new Exception("Поля не заполнены");
