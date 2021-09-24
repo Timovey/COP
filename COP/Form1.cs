@@ -147,17 +147,17 @@ namespace COP
 						objects.Add(new ClassFill { Id = 2, Name = "aaaaaaaaa", Price = 300 });
 						objects.Add(new ClassFill { Id = 6, Name = "qslplcdsocdi", Price = 400 });
 						objects.Add(new ClassFill { Id = 9, Name = ";alkcmjkcd[qo", Price = 800 });
+                        objects.Add(new ClassFill { Id = 19, Name = "34223423243", Price = 1600 });
+                        Type type = c.GetType();
 
-						Type type = c.GetType();
-
-						titleColumn.Add(new WordTitleColumn { Name = "Qe", Width = 20, PropertyInfo = type.GetProperty("Id") });
-						titleColumn.Add(new WordTitleColumn { Name = "N", Width = 26, PropertyInfo = type.GetProperty("Name") });
+						titleColumn.Add(new WordTitleColumn { Name = "Id", Width = 20, PropertyInfo = type.GetProperty("Id") });
+						titleColumn.Add(new WordTitleColumn { Name = "Name", Width = 26, PropertyInfo = type.GetProperty("Name") });
 						titleColumn.Add(new WordTitleColumn { Name = "Price", Width = 40, PropertyInfo = type.GetProperty("Price") });
 						titleColumn.Add(new WordTitleColumn { Name = "Old", Width = 22, FieldInfo = type.GetField("Old") });
 
 						mergedTitleColumns.Add(new WordMergedTitleColumn
 						{
-							Columns = new int[] { 0, 1 },
+							Columns = new int[] { 1, 2},
 							Title = "Common"
 						});
 						component21.Report(fileName: dialog.FileName, title: textBoxTitle.Text, titleColumn, mergedTitleColumns, objects);
