@@ -133,7 +133,7 @@ WordTextProperties {Bold = true, Size = "28", } ) },
                         tCellSecond.TableCellProperties.VerticalMerge = new VerticalMerge { Val = MergedCellValues.Restart };
                     }
                     
-                    if(mergedCells[p] && p > 0 && !mergedCells[p - 1])
+                    if(mergedCells[p] && ((p > 0 && !mergedCells[p - 1]) || (p == 0)))
                     {
                         tCellFirst.TableCellProperties.HorizontalMerge = new HorizontalMerge { Val = MergedCellValues.Restart };
                     }

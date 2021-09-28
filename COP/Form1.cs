@@ -157,7 +157,7 @@ namespace COP
 
 						mergedTitleColumns.Add(new WordMergedTitleColumn
 						{
-							Columns = new int[] { 1, 2},
+							Columns = new int[] { 0, 1, 2},
 							Title = "Common"
 						});
 						component21.Report(fileName: dialog.FileName, title: textBoxTitle.Text, titleColumn, mergedTitleColumns, objects);
