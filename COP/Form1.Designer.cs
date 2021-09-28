@@ -49,12 +49,14 @@ namespace COP
             this.userControl31 = new ControlLibrary.UserControl3();
             this.userControl21 = new ControlLibrary.UserControl2();
             this.userControl11 = new ControlLibrary.UserControl1();
-            this.component11 = new NoVisualControl.Component1(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.buttonWord2 = new System.Windows.Forms.Button();
-            this.component21 = new NoVisualControl.Component2(this.components);
             this.buttonTakeList = new System.Windows.Forms.Button();
+            this.buttonWord3 = new System.Windows.Forms.Button();
+            this.component11 = new NoVisualControl.Component1(this.components);
+            this.component21 = new NoVisualControl.Component2(this.components);
+            this.component31 = new NoVisualControl.Component3(this.components);
             this.SuspendLayout();
             // 
             // buttonColor
@@ -263,11 +265,22 @@ namespace COP
             this.buttonTakeList.UseVisualStyleBackColor = true;
             this.buttonTakeList.Click += new System.EventHandler(this.ButtonTakeList_Click);
             // 
+            // buttonWord3
+            // 
+            this.buttonWord3.Location = new System.Drawing.Point(541, 523);
+            this.buttonWord3.Name = "buttonWord3";
+            this.buttonWord3.Size = new System.Drawing.Size(193, 58);
+            this.buttonWord3.TabIndex = 24;
+            this.buttonWord3.Text = "Создать Word 3";
+            this.buttonWord3.UseVisualStyleBackColor = true;
+            this.buttonWord3.Click += new System.EventHandler(this.buttonWord3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 640);
+            this.Controls.Add(this.buttonWord3);
             this.Controls.Add(this.buttonTakeList);
             this.Controls.Add(this.buttonWord2);
             this.Controls.Add(this.textBoxTitle);
@@ -325,6 +338,8 @@ namespace COP
         private System.Windows.Forms.Button buttonWord2;
         private NoVisualControl.Component2 component21;
         private System.Windows.Forms.Button buttonTakeList;
+        private System.Windows.Forms.Button buttonWord3;
+        private NoVisualControl.Component3 component31;
     }
 }
 

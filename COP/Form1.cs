@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NoVisualControl.HelperModels;
+using Xceed.Document.NET;
+using Xceed.Words.NET;
 namespace COP
 {
     public partial class Form1 : Form
@@ -97,7 +99,7 @@ namespace COP
             {
 				MessageBox.Show("Заполните заголовок", "Ошибка", MessageBoxButtons.OK,
 						  MessageBoxIcon.Error);
-
+				return;
 			}
 			using (var dialog = new SaveFileDialog { Filter = "docx|*.docx" })
 			{
@@ -129,7 +131,7 @@ namespace COP
 			{
 				MessageBox.Show("Заполните заголовок", "Ошибка", MessageBoxButtons.OK,
 						  MessageBoxIcon.Error);
-
+				return;
 			}
 			using (var dialog = new SaveFileDialog { Filter = "docx|*.docx" })
 			{
@@ -177,5 +179,38 @@ namespace COP
         {
             userControl31.GetItem<ClassFill>();
         }
+
+		private void buttonWord3_Click(object sender, EventArgs e)
+		{
+			if (String.IsNullOrEmpty(textBoxTitle.Text))
+			{
+				MessageBox.Show("Заполните заголовок", "Ошибка", MessageBoxButtons.OK,
+						  MessageBoxIcon.Error);
+				return;
+			}
+			using (var dialog = new SaveFileDialog { Filter = "docx|*.docx" })
+			{
+				if (dialog.ShowDialog() == DialogResult.OK)
+				{
+					try
+					{
+						List<TestData> data = new List<TestData>();
+						data.Add(new TestData { name = "csscdscd", value = 1 });
+						data.Add(new TestData { name = "aaa", value = 51 });
+						data.Add(new TestData { name = "sdcdscd", value = 11 });
+						data.Add(new TestData { name = "q234", value = 43 });
+						data.Add(new TestData { name = "Ty", value = 32 });
+						component31.Report(fileName: dialog.FileName, title: textBoxTitle.Text, nameDiagram: "diag", ChartLegendPosition.Left, data);
+						MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK,
+						MessageBoxIcon.Information);
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+					   MessageBoxIcon.Error);
+					}
+				}
+			}
+		}
     }
 }
