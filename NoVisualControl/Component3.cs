@@ -24,7 +24,9 @@ namespace NoVisualControl
 
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Метод создания отчета
+        /// </summary>
         public void Report(string fileName, string title, string nameDiagram, ChartLegendPosition chartLegendPosition, List<TestData> data)
         {
             if (String.IsNullOrEmpty(fileName) || String.IsNullOrEmpty(title) || String.IsNullOrEmpty(nameDiagram) || data.Count == 0)
@@ -34,6 +36,9 @@ namespace NoVisualControl
             CreateDoc(fileName, title, nameDiagram, chartLegendPosition, data);
             
         }
+        /// <summary>
+        /// Создание документа
+        /// </summary>
         private void CreateDoc(string fileName, string title, string nameDiagram, ChartLegendPosition chartLegendPosition, List<TestData> data)
         {
             try
@@ -52,7 +57,9 @@ namespace NoVisualControl
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Метод создания диаграммы
+        /// </summary>
         private static Chart CreateLineChart(ChartLegendPosition chartLegendPosition, string nameDiagram, List<TestData> data)
         {
             // создаём линейную диаграмму

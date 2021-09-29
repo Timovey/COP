@@ -25,6 +25,9 @@ namespace NoVisualControl
 
             InitializeComponent();
         }
+        /// <summary>
+        /// Метод создания отчета
+        /// </summary>
         public void Report(string fileName, string title, List<string> content)
         {
             if (String.IsNullOrEmpty(fileName) || String.IsNullOrEmpty(title) || content.Count == 0)
@@ -41,7 +44,6 @@ namespace NoVisualControl
         /// <summary>
         /// Создание документа
         /// </summary>
-        /// <param name="info"></param>
         private static void CreateDoc(WordInfo info)
         {
             using (WordprocessingDocument wordDocument =

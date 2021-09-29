@@ -12,16 +12,19 @@ namespace ControlLibrary
     public partial class UserControl1 : UserControl
     {
 		private event EventHandler _selected;
-
+        /// <summary>
+        /// свойство привязки сибытия
+        /// </summary>
 		public event EventHandler Selected
 		{
 			add { _selected += value; }
 			remove { _selected -= value; }
 		}
-        
 
-        //Свойство получения выбранного элемента списка или установка значения 
-		public string GetSelectedItem
+        /// <summary>
+        /// Свойство получения выбранного элемента списка или установка значения 
+        /// </summary>
+        public string GetSelectedItem
         {
             get
             {
@@ -40,7 +43,10 @@ namespace ControlLibrary
 
             }
         }
-        // метод заполнения списка строковыми значениями
+
+        /// <summary>
+        /// метод заполнения списка строковыми значениями
+        /// </summary>
         public void Fill(params string[] strings)
 		{
             foreach (string s in strings) {
@@ -52,7 +58,9 @@ namespace ControlLibrary
             InitializeComponent();
 
         }
-        // метод очистки значений списка
+        /// <summary>
+        /// метод очистки значений списка
+        /// </summary>
         public void DisposeComboBox()
         {
             ComboBox.Items.Clear();

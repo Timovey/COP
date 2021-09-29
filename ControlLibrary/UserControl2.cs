@@ -12,13 +12,18 @@ namespace ControlLibrary
 {
 	public partial class UserControl2 : UserControl
 	{
-        // свойство для установки значения шаблона
+        /// <summary>
+        /// свойство для установки значения шаблона
+        /// </summary>
         public string Template { set { template = value; } get { return template; } }
         //private string template = @"^[0-9]+$";
         private string template = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
 
         private string example = "8 888 888";
 
+        /// <summary>
+        /// свойство установки и получения значения в TextBox
+        /// </summary>
         public string Value
         {
             get
@@ -34,7 +39,9 @@ namespace ControlLibrary
             InitializeComponent();
 
         }
-        // метод установки примера 
+        /// <summary>
+        /// метод установки примера 
+        /// </summary>
         public void SetExample(string value)
         {
             example = value;

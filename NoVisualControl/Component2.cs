@@ -26,7 +26,9 @@ namespace NoVisualControl
 
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Метод создания отчета
+        /// </summary>
         public void Report(string fileName, string title, List<WordTitleColumn> titleColumns, List<WordMergedTitleColumn> mergedTitleColumns, List<Object> data)
         {
             if (String.IsNullOrEmpty(fileName) || String.IsNullOrEmpty(title) || titleColumns.Count == 0 || data.Count == 0)
@@ -43,7 +45,6 @@ namespace NoVisualControl
         /// <summary>
         /// Создание документа
         /// </summary>
-        /// <param name="info"></param>
         private static void CreateDoc(string FileName, string Title, List<WordTitleColumn> titleColumns, List<WordMergedTitleColumn> mergedTitleColumns, List<Object> data)
         {
             using (WordprocessingDocument wordDocument =
@@ -214,38 +215,7 @@ WordTextProperties {Bold = true, Size = "28", } ) },
                     }
                     table.Append(tr);
                 }
-                //tc.Append(new Paragraph(new Run(new Text("Дата"))));
-                //tr.Append(tc);
-                //tc = new TableCell();
-                //tc.Append(new Paragraph(new Run(new Text("Наименование процедуры"))));
-                //tr.Append(tc);
-                //tc = new TableCell();
-                //tc = new TableCell();
-                //tc.Append(new Paragraph(new Run(new Text("Стоимость (руб)"))));
-                //tr.Append(tc);
-                //table.Append(tr);
-
-                //foreach(var col in )
-
-                //foreach (var procedure in list)
-                //{
-                //    for (var i = 0; i < procedure.Count; i++)
-                //    {
-                //        tr = new TableRow();
-                //        tc = new TableCell();
-                //        tc.Append(new Paragraph(new Run(new Text(info.Distributions[j].Date.ToString()))));
-                //        tr.Append(tc);
-                //        tc = new TableCell();
-                //        tc.Append(new Paragraph(new Run(new Text(info.Distributions[j].ProcedureName.ToString()))));
-                //        tr.Append(tc);
-                //        tc = new TableCell();
-                //        tc.Append(new Paragraph(new Run(new Text(info.Distributions[j].Price.ToString()))));
-                //        tr.Append(tc);
-                //        table.Append(tr);
-                //        j++;
-                //    }
-
-                //}
+               
                 docBody.Append(table);
                 docBody.AppendChild(CreateSectionProperties());
                 wordDocument.MainDocumentPart.Document.Save();
@@ -334,7 +304,9 @@ WordTextProperties {Bold = true, Size = "28", } ) },
             }
             return null;
         }
-
+        /// <summary>
+        /// Метод проверки
+        /// </summary>
         private bool Check(List<WordTitleColumn> titleColumns, List<WordMergedTitleColumn> mergedTitleColumns, List<Object> data)
         {
             
@@ -402,30 +374,5 @@ WordTextProperties {Bold = true, Size = "28", } ) },
 
             return true;
         }
-        private static int GetCountMergedColumns(int index, bool[] columns)
-        {
-            int h = 0;
-            for(int i = index; i < columns.Length; i++)
-            {
-                if(columns[i])
-                {
-                    h++;
-                }
-                else
-                {
-                    break;
-                }
-            }
-            return h;
-        }
-        //private static decimal GetWidthColumns(WordMergedTitleColumn col, List<WordTitleColumn> titleColumns)
-        //{
-        //    decimal totalWidth = 0;
-        //    foreach(int c in col.Columns)
-        //    {
-        //        totalWidth += titleColumns[c].Width;
-        //    }
-        //    return totalWidth;
-        //}
     }
 }

@@ -17,7 +17,9 @@ namespace ControlLibrary
         private string template = "";
         private char begin = ' ';
         private char end = ' ';
-        // добавление шабьлона
+        /// <summary>
+        /// метод добавление шаблона
+        /// </summary>
         public void AddTemplate(string templateFromOutside, char begin, char end)
         {
             this.begin = begin;
@@ -37,7 +39,9 @@ namespace ControlLibrary
         {
             InitializeComponent();
         }
-        // полученние и установка индекса
+        /// <summary>
+        /// свойство полученния и установки индекса выбранного элемента
+        /// </summary>
         public int GetIndex
 		{
             get
@@ -52,7 +56,10 @@ namespace ControlLibrary
 				}
 			}
 		}
-        // получение элемента
+        /// <summary>
+        /// свойство получения элемента
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         public T GetItem<T>  () where T : new()
 		{
             if(ListBox.SelectedIndex != -1)
@@ -108,7 +115,10 @@ namespace ControlLibrary
             }
             return new T();
 		}
-        // добавление элементов в список
+        /// <summary>
+        /// метод добавления элементов в список
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         public void AddToList<T>(List<T> obj)
         {
             
