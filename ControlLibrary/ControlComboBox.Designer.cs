@@ -1,7 +1,7 @@
 ﻿
 namespace ControlLibrary
 {
-	partial class UserControl1
+	partial class ControlComboBox
 	{
 		/// <summary> 
 		/// Обязательная переменная конструктора.

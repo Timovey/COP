@@ -9,7 +9,7 @@ using static System.Windows.Forms.ComboBox;
 
 namespace ControlLibrary
 {
-    public partial class UserControl1 : UserControl
+    public partial class ControlComboBox : UserControl
     {
 		private event EventHandler _selected;
         /// <summary>
@@ -53,7 +53,7 @@ namespace ControlLibrary
                 ComboBox.Items.Add(s);
             }
 		}
-        public UserControl1()
+        public ControlComboBox()
         {
             InitializeComponent();
 

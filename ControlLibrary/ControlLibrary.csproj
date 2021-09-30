@@ -44,34 +44,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl1.cs">
+    <Compile Include="ControlComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="ControlComboBox.Designer.cs">
+      <DependentUpon>ControlComboBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl2.cs">
+    <Compile Include="ControlTextBoxMail.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl2.Designer.cs">
-      <DependentUpon>UserControl2.cs</DependentUpon>
+    <Compile Include="ControlTextBoxMail.Designer.cs">
+      <DependentUpon>ControlTextBoxMail.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl3.cs">
+    <Compile Include="ControlListBoxRecords.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl3.Designer.cs">
-      <DependentUpon>UserControl3.cs</DependentUpon>
+    <Compile Include="ControlListBoxRecords.Designer.cs">
+      <DependentUpon>ControlListBoxRecords.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="ControlComboBox.resx">
+      <DependentUpon>ControlComboBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl2.resx">
-      <DependentUpon>UserControl2.cs</DependentUpon>
+    <EmbeddedResource Include="ControlTextBoxMail.resx">
+      <DependentUpon>ControlTextBoxMail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl3.resx">
-      <DependentUpon>UserControl3.cs</DependentUpon>
+    <EmbeddedResource Include="ControlListBoxRecords.resx">
+      <DependentUpon>ControlListBoxRecords.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

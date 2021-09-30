@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ControlLibrary
 {
-	public partial class UserControl2 : UserControl
+	public partial class ControlTextBoxMail : UserControl
 	{
         /// <summary>
         /// свойство для установки значения шаблона
@@ -34,7 +34,7 @@ namespace ControlLibrary
             }
             set { TextBox.Text = value; }
         }
-        public UserControl2()
+        public ControlTextBoxMail()
         {
             InitializeComponent();
 

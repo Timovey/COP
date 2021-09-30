@@ -11,14 +11,14 @@ using NoVisualControl.HelperModels;
 
 namespace NoVisualControl
 {
-    public partial class Component3 : Component
+    public partial class ComponentWordLinearDiagramm : Component
     {
-        public Component3()
+        public ComponentWordLinearDiagramm()
         {
             InitializeComponent();
         }
 
-        public Component3(IContainer container)
+        public ComponentWordLinearDiagramm(IContainer container)
         {
             container.Add(this);
 

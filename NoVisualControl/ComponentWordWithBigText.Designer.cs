@@ -1,7 +1,7 @@
 ﻿
 namespace NoVisualControl
 {
-    partial class Component3
+    partial class ComponentWordWithBigText
     {
         /// <summary>
         /// Обязательная переменная конструктора.

@@ -12,14 +12,14 @@ using NoVisualControl.HelperModels;
 
 namespace NoVisualControl
 {
-    public partial class Component1 : Component
+    public partial class ComponentWordWithBigText : Component
     {
-        public Component1()
+        public ComponentWordWithBigText()
         {
             InitializeComponent();
         }
 
-        public Component1(IContainer container)
+        public ComponentWordWithBigText(IContainer container)
         {
             container.Add(this);
 

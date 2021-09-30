@@ -1,7 +1,7 @@
 ﻿
 namespace NoVisualControl
 {
-    partial class Component2
+    partial class ComponentWordTable2Rows
     {
         /// <summary>
         /// Обязательная переменная конструктора.

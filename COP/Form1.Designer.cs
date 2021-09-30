@@ -46,17 +46,17 @@ namespace COP
             this.buttonTemList = new System.Windows.Forms.Button();
             this.textBoxTemp = new System.Windows.Forms.TextBox();
             this.buttonWord1 = new System.Windows.Forms.Button();
-            this.userControl31 = new ControlLibrary.UserControl3();
-            this.userControl21 = new ControlLibrary.UserControl2();
-            this.userControl11 = new ControlLibrary.UserControl1();
+            this.userControl31 = new ControlLibrary.ControlListBoxRecords();
+            this.userControl21 = new ControlLibrary.ControlTextBoxMail();
+            this.userControl11 = new ControlLibrary.ControlComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.buttonWord2 = new System.Windows.Forms.Button();
             this.buttonTakeList = new System.Windows.Forms.Button();
             this.buttonWord3 = new System.Windows.Forms.Button();
-            this.component11 = new NoVisualControl.Component1(this.components);
-            this.component21 = new NoVisualControl.Component2(this.components);
-            this.component31 = new NoVisualControl.Component3(this.components);
+            this.component11 = new NoVisualControl.ComponentWordWithBigText(this.components);
+            this.component21 = new NoVisualControl.ComponentWordTable2Rows(this.components);
+            this.component31 = new NoVisualControl.ComponentWordLinearDiagramm(this.components);
             this.SuspendLayout();
             // 
             // buttonColor
@@ -313,13 +313,13 @@ namespace COP
 
 		#endregion
 
-		private ControlLibrary.UserControl1 userControl11;
+		private ControlLibrary.ControlComboBox userControl11;
 		private System.Windows.Forms.Button buttonColor;
 		private System.Windows.Forms.Button buttonFill;
 		private System.Windows.Forms.Button buttonDispose;
 		private System.Windows.Forms.Button buttonTake;
 		private System.Windows.Forms.TextBox textBoxSet;
-		private ControlLibrary.UserControl2 userControl21;
+		private ControlLibrary.ControlTextBoxMail userControl21;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox textBoxExample;
 		private System.Windows.Forms.TextBox textBoxTemplate;
@@ -327,19 +327,19 @@ namespace COP
 		private System.Windows.Forms.Button buttonExample;
 		private System.Windows.Forms.Button buttonTemplate;
 		private System.Windows.Forms.Button buttonMatch;
-		private ControlLibrary.UserControl3 userControl31;
+		private ControlLibrary.ControlListBoxRecords userControl31;
 		private System.Windows.Forms.Button buttonFillListBox;
 		private System.Windows.Forms.Button buttonTemList;
 		private System.Windows.Forms.TextBox textBoxTemp;
         private System.Windows.Forms.Button buttonWord1;
-        private NoVisualControl.Component1 component11;
+        private NoVisualControl.ComponentWordWithBigText component11;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxTitle;
         private System.Windows.Forms.Button buttonWord2;
-        private NoVisualControl.Component2 component21;
+        private NoVisualControl.ComponentWordTable2Rows component21;
         private System.Windows.Forms.Button buttonTakeList;
         private System.Windows.Forms.Button buttonWord3;
-        private NoVisualControl.Component3 component31;
+        private NoVisualControl.ComponentWordLinearDiagramm component31;
     }
 }
 

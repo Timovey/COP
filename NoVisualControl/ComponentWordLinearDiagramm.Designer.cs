@@ -1,7 +1,7 @@
 ﻿
 namespace NoVisualControl
 {
-    partial class Component1
+    partial class ComponentWordLinearDiagramm
     {
         /// <summary>
         /// Обязательная переменная конструктора.

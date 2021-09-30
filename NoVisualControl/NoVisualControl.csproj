@@ -64,23 +64,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Component1.cs">
+    <Compile Include="ComponentWordWithBigText.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Component1.Designer.cs">
-      <DependentUpon>Component1.cs</DependentUpon>
+    <Compile Include="ComponentWordWithBigText.Designer.cs">
+      <DependentUpon>ComponentWordWithBigText.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component2.cs">
+    <Compile Include="ComponentWordTable2Rows.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Component2.Designer.cs">
-      <DependentUpon>Component2.cs</DependentUpon>
+    <Compile Include="ComponentWordTable2Rows.Designer.cs">
+      <DependentUpon>ComponentWordTable2Rows.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component3.cs">
+    <Compile Include="ComponentWordLinearDiagramm.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Component3.Designer.cs">
-      <DependentUpon>Component3.cs</DependentUpon>
+    <Compile Include="ComponentWordLinearDiagramm.Designer.cs">
+      <DependentUpon>ComponentWordLinearDiagramm.cs</DependentUpon>
     </Compile>
     <Compile Include="HelperModels\TestData.cs" />
     <Compile Include="HelperModels\WordInfo.cs" />

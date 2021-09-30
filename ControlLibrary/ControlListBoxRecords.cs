@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ControlLibrary
 {
-	public partial class UserControl3 : UserControl
+	public partial class ControlListBoxRecords : UserControl
 	{
         private string Field1 = "";
         private string Field2 = "";
@@ -35,7 +35,7 @@ namespace ControlLibrary
             template = templateFromOutside;
            
         }
-        public UserControl3()
+        public ControlListBoxRecords()
         {
             InitializeComponent();
         }

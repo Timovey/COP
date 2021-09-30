@@ -13,14 +13,14 @@ using System.Reflection;
 
 namespace NoVisualControl
 {
-    public partial class Component2 : Component
+    public partial class ComponentWordTable2Rows : Component
     {
-        public Component2()
+        public ComponentWordTable2Rows()
         {
             InitializeComponent();
         }
 
-        public Component2(IContainer container)
+        public ComponentWordTable2Rows(IContainer container)
         {
             container.Add(this);
 
