@@ -29,7 +29,7 @@ namespace NoVisualControl
         /// <summary>
         /// Метод создания отчета
         /// </summary>
-        public void Report(string fileName, string title, List<WordTitleColumn> titleColumns, List<WordMergedTitleColumn> mergedTitleColumns, List<Object> data)
+        public void Report<T>(string fileName, string title, List<WordTitleColumn> titleColumns, List<WordMergedTitleColumn> mergedTitleColumns, List<T> data)
         {
             if (String.IsNullOrEmpty(fileName) || String.IsNullOrEmpty(title) || titleColumns.Count == 0 || data.Count == 0)
             {
@@ -45,7 +45,7 @@ namespace NoVisualControl
         /// <summary>
         /// Создание документа
         /// </summary>
-        private static void CreateDoc(string FileName, string Title, List<WordTitleColumn> titleColumns, List<WordMergedTitleColumn> mergedTitleColumns, List<Object> data)
+        private static void CreateDoc<T>(string FileName, string Title, List<WordTitleColumn> titleColumns, List<WordMergedTitleColumn> mergedTitleColumns, List<T> data)
         {
             using (WordprocessingDocument wordDocument =
            WordprocessingDocument.Create(FileName, WordprocessingDocumentType.Document))
@@ -307,7 +307,7 @@ WordTextProperties {Bold = true, Size = "28", } ) },
         /// <summary>
         /// Метод проверки
         /// </summary>
-        private bool Check(List<WordTitleColumn> titleColumns, List<WordMergedTitleColumn> mergedTitleColumns, List<Object> data)
+        private bool Check<T>(List<WordTitleColumn> titleColumns, List<WordMergedTitleColumn> mergedTitleColumns, List<T> data)
         {
             
             foreach(var t in titleColumns)
@@ -345,7 +345,7 @@ WordTextProperties {Bold = true, Size = "28", } ) },
                 }
 
             }
-            foreach(Object d in data)
+            foreach(T d in data)
             {
                 foreach (var t in titleColumns)
                 {
